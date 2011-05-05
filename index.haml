@@ -1,0 +1,25 @@
+!!!
+%html
+  %head
+    %title Sample WebApp
+    %script{"type" => "text/javascript", "src" => "lib/jquery.js"}
+    %script{"type" => "text/javascript", "src" => "lib/jquery-ui.js"}
+    %script{"type" => "text/javascript", "src" => "lib/underscore.js"}
+    %script{"type" => "text/javascript", "src" => "lib/backbone.js"}
+    %script{"type" => "text/javascript", "src" => "mvc.js"}
+    %link{"href" => "lib/jquery-ui.css", "media" => "screen, projection, print",
+      "rel" => "stylesheet", "type" => "text/css"}
+    %link{"href" => "stylesheets/screen.css", "media" => "screen, projection",
+      "rel" => "stylesheet", "type" => "text/css"}
+    %link{"href" => "stylesheets/print.css", "media" => "print",
+      "rel" => "stylesheet", "type" => "text/css"}
+  %body
+    %div.content
+      %h1 Quick Todo
+      %ul#todos
+      %div#newitem{"style" => "display:none"}
+        %input{"type" => "text"}
+        %button#yes Add
+        %button#no Cancel
+      %button#newitembtn Add a new item
+
