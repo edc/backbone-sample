@@ -102,6 +102,8 @@ class TodoController extends Backbone.Controller
             error: ->
                 alert "Cannot load data!"
             success: ->
+                models = _(collection.models).reject (x) -> x.id[0] is '_'
+                collection.refresh models
                 views = for model in collection.models
                     model.fetch()
                     new TodoItemView

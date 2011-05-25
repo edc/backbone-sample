@@ -39,10 +39,10 @@
     return TodoItem;
   })();
   TodoItemCollection = (function() {
+    __extends(TodoItemCollection, Backbone.Collection);
     function TodoItemCollection() {
       TodoItemCollection.__super__.constructor.apply(this, arguments);
     }
-    __extends(TodoItemCollection, Backbone.Collection);
     TodoItemCollection.prototype.model = TodoItem;
     TodoItemCollection.prototype.url = 'http://127.0.0.1:5984/todos/_all_docs/';
     TodoItemCollection.prototype.parse = function(response) {
@@ -127,7 +127,11 @@
           return alert("Cannot load data!");
         },
         success: function() {
-          var frame, model, views;
+          var frame, model, models, views;
+          models = _(collection.models).reject(function(x) {
+            return x.id[0] === '_';
+          });
+          collection.refresh(models);
           views = (function() {
             var _i, _len, _ref, _results;
             _ref = collection.models;
