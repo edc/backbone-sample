@@ -4,7 +4,7 @@ A simple sample WebApp that is empowered by
 - CoffeeScript
 - CouchDB
 
-## Usasge
+## Running the Application
 
 There are two ways to run the sample, run it as a local application or run it as a couchApp.
 
@@ -30,7 +30,7 @@ this
 
 Open that URL to see the app in action.
 
-## Build the Application 
+## Building the Application 
 
 The code is pre-built. If you want to build on your own, run `make`. You must
 have
